@@ -1,55 +1,150 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio — DevMakerStudio(Socrates)</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional QA Automation Portfolio</title>
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    a:hover {
+      color: #1f6feb;
+      text-shadow: 0 0 8px rgba(88,166,255,0.8);
+    }
+
+    header {
+      padding: 50px 20px;
+      text-align: center;
+      background: linear-gradient(120deg, #0d1117, #161b22, #0d1117);
+      border-bottom: 1px solid #30363d;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+      text-shadow: 0 0 12px rgba(255,255,255,0.2);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.85;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 50px;
+      padding: 25px;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      transition: 0.3s ease;
+    }
+
+    section:hover {
+      box-shadow: 0 0 20px rgba(88,166,255,0.15);
+      transform: translateY(-3px);
+      border-color: #58a6ff;
+    }
+
+    h2 {
+      color: #ffffff;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px rgba(255,255,255,0.2);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 10px 0;
+      padding: 10px 15px;
+      background: #0d1117;
+      border-radius: 8px;
+      border: 1px solid #30363d;
+      transition: 0.3s ease;
+    }
+
+    ul li:hover {
+      border-color: #58a6ff;
+      box-shadow: 0 0 12px rgba(88,166,255,0.2);
+      transform: translateX(5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      opacity: 0.7;
+    }
+  </style>
 </head>
-
 <body>
-    <header>
-        <img src="assets/imagen-perfil.png" alt="Foto" class="profile">
-        <h1>Tu Nombre</h1>
-        <h2>QA | Automatización | Desarrollador | IA</h2>
-        <p>Soy un apasionado por la tecnología, testing y desarrollo. Me gusta crear soluciones prácticas que combinan automatización, software y creatividad.</p>
-    </header>
+  <header>
+    <h1>Sócrates Palacios</h1>
+    <p>QA Automation Engineer | Python · Selenium · Django · PyTest</p>
+  </header>
 
+  <div class="container">
     <section>
-        <h3>🧩 Proyectos Destacados</h3>
-
-        <div class="card">
-            <h4>🔍 Proyecto QA Manual</h4>
-            <p>Casos de prueba, reporte de bugs y análisis funcional.</p>
-            <a href="https://github.com/TU_USUARIO/proyecto-qa" target="_blank">Ver en GitHub</a>
-        </div>
-
-        <div class="card">
-            <h4>🤖 Automatización con Selenium + PyTest</h4>
-            <p>Automatización de flujo completo con Page Object Model.</p>
-            <a href="https://github.com/TU_USUARIO/selenium-automation" target="_blank">Ver en GitHub</a>
-        </div>
-
-        <div class="card">
-            <h4>📡 API en Python/Java</h4>
-            <p>API simple con endpoints CRUD + documentación.</p>
-            <a href="https://github.com/TU_USUARIO/api-demo" target="_blank">Ver en GitHub</a>
-        </div>
-
-        <div class="card">
-            <h4>🧠 Mini Proyecto IA</h4>
-            <p>Uso de modelos de IA para clasificar texto o imágenes.</p>
-            <a href="https://github.com/TU_USUARIO/proyecto-ia" target="_blank">Ver en GitHub</a>
-        </div>
-
+      <h2>👨‍💻 Sobre mí</h2>
+      <p>
+        Soy un QA Automation Engineer enfocado en escribir pruebas robustas, eficientes y mantenibles utilizando ecosistema Python. Me apasiona la calidad del software, la automatización, la arquitectura de pruebas, y las buenas prácticas.
+      </p>
     </section>
 
     <section>
-        <h3>📬 Contacto</h3>
-        <p>Email: tuemail@gmail.com</p>
-        <p>LinkedIn: <a href="#">Tu LinkedIn</a></p>
-        <p>GitHub: <a href="https://github.com/TU_USUARIO">github.com/TU_USUARIO</a></p>
+      <h2>🛠️ Tecnologías y Herramientas</h2>
+      <ul>
+        <li>Python (Async, typing, OOP avanzado)</li>
+        <li>Selenium + Page Object Model + Page Factory</li>
+        <li>PyTest (fixtures, parametrización, paralelización)</li>
+        <li>Django (APIs, ORM, testing integrado)</li>
+        <li>Pandas (data validation, ETL básico para QA)</li>
+        <li>Git / GitHub / GitHub Actions</li>
+        <li>Docker (entornos aislados para pruebas)</li>
+        <li>CI/CD básico para pipelines de pruebas</li>
+      </ul>
     </section>
 
+    <section>
+      <h2>🚀 Proyectos Destacados</h2>
+      <ul>
+        <li><strong>Framework de automatización en Python + PyTest + Selenium</strong><br>Arquitectura modular, reporting y fixtures profesionales.</li>
+        <li><strong>API Testing con Django + PyTest</strong><br>Validación de endpoints, seguridad, respuestas y rendimiento.</li>
+        <li><strong>Data QA con Pandas</strong><br>Limpieza, validación y verificación automatizada de datasets.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📫 Contacto</h2>
+      <p>Email: <a href="mailto:socratespalacios@gmail.com">socratespalacios@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/">Tu GitHub Aquí</a></p>
+      <p>LinkedIn: <a href="#">Tu LinkedIn Aquí</a></p>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 Sócrates Palacios — Portafolio QA Automation
+  </footer>
 </body>
 </html>
