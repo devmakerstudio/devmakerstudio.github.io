@@ -3,72 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Professional Python Portfolio</title>
+  <title>DevMaker Studio — Python Engineering & Automation Portfolio</title>
   <style>
+    /* === GLOBAL STYLES === */
     body {
       font-family: "Inter", sans-serif;
       margin: 0;
       padding: 0;
-      background: #0d1117;
+      background: radial-gradient(circle at top, #0e121a, #0a0d14 70%);
       color: #e6edf3;
-      line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
-      color: #58a6ff;
+      color: #6bb6ff;
       text-decoration: none;
       transition: 0.3s ease;
     }
-
     a:hover {
-      color: #1f6feb;
-      text-shadow: 0 0 8px rgba(88,166,255,0.8);
+      color: #9cd2ff;
+      text-shadow: 0 0 10px rgba(156,210,255,0.8);
     }
 
+    /* === ANIMATED BANNER === */
     header {
-      padding: 50px 20px;
+      padding: 70px 20px;
       text-align: center;
-      background: linear-gradient(120deg, #0d1117, #161b22, #0d1117);
-      border-bottom: 1px solid #30363d;
+      background: linear-gradient(180deg, #0f1724, #0a0e15);
+      border-bottom: 1px solid #222831;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        from 180deg,
+        rgba(88,166,255,0.25),
+        rgba(0,0,0,0) 40%
+      );
+      animation: rotateGlow 10s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes rotateGlow {
+      100% { transform: rotate(360deg); }
+    }
+
+    .banner-image {
+      width: 100%;
+      max-width: 1100px;
+      border-radius: 18px;
+      z-index: 2;
+      position: relative;
+      box-shadow: 0 0 25px rgba(88,166,255,0.25);
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeIn 1.4s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(15px); }
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       margin-bottom: 10px;
       color: #ffffff;
-      text-shadow: 0 0 12px rgba(255,255,255,0.2);
+      text-shadow: 0 0 12px rgba(255,255,255,0.25);
+      z-index: 2;
+      position: relative;
+      animation: fadeIn 1.6s ease-out;
     }
 
     header p {
-      font-size: 1.2rem;
-      opacity: 0.85;
+      font-size: 1.3rem;
+      opacity: 0.9;
+      z-index: 2;
+      position: relative;
+      animation: fadeIn 1.8s ease-out;
     }
 
+    /* === MAIN CONTAINER === */
     .container {
-      max-width: 900px;
+      max-width: 950px;
       margin: 40px auto;
       padding: 20px;
     }
 
     section {
       margin-bottom: 50px;
-      padding: 25px;
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 12px;
-      transition: 0.3s ease;
+      padding: 30px;
+      background: #11161f;
+      border: 1px solid #222b35;
+      border-radius: 14px;
+      transition: 0.35s ease;
+      position: relative;
+      overflow: hidden;
     }
 
     section:hover {
-      box-shadow: 0 0 20px rgba(88,166,255,0.15);
-      transform: translateY(-3px);
+      transform: translateY(-5px);
       border-color: #58a6ff;
+      box-shadow: 0 0 25px rgba(88,166,255,0.2);
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 130%;
+      height: 130%;
+      background: radial-gradient(circle, rgba(88,166,255,0.1), transparent 70%);
+      opacity: 0;
+      transition: 0.4s ease;
+    }
+
+    section:hover::before {
+      opacity: 1;
     }
 
     h2 {
       color: #ffffff;
       margin-bottom: 15px;
-      text-shadow: 0 0 5px rgba(255,255,255,0.2);
+      text-shadow: 0 0 6px rgba(255,255,255,0.25);
     }
 
     ul {
@@ -83,80 +148,110 @@
       border-radius: 8px;
       border: 1px solid #30363d;
       transition: 0.3s ease;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeSlideIn 0.6s ease forwards;
+    }
+
+    ul li:nth-child(1) { animation-delay: 0.1s; }
+    ul li:nth-child(2) { animation-delay: 0.2s; }
+    ul li:nth-child(3) { animation-delay: 0.3s; }
+    ul li:nth-child(4) { animation-delay: 0.4s; }
+    ul li:nth-child(5) { animation-delay: 0.5s; }
+    ul li:nth-child(6) { animation-delay: 0.6s; }
+    ul li:nth-child(7) { animation-delay: 0.7s; }
+    ul li:nth-child(8) { animation-delay: 0.8s; }
+
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     ul li:hover {
       border-color: #58a6ff;
-      box-shadow: 0 0 12px rgba(88,166,255,0.2);
-      transform: translateX(5px);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 18px rgba(88,166,255,0.3);
     }
 
     footer {
       text-align: center;
       padding: 30px;
-      opacity: 0.7;
+      opacity: 0.6;
     }
 
-    .avatar {
-  width: 400px;
-  height: 300px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  border: 2px solid #30363d;
-  box-shadow: 0 0 18px rgba(88,166,255,0.15);
-}
-
-    
   </style>
 </head>
 <body>
+
   <header>
-    <img src="assets/avatar.png" alt="DevMaker Studio Avatar" class="avatar">
+    <img src="assets/avatar.png" alt="DevMaker Studio Avatar" class="banner-image">
     <h1>DevMaker Studio</h1>
-    <p>Automation Engineer & Python Software Developer</p>
+    <p>Automation Engineer • Python Backend Developer • QA Automation Specialist</p>
   </header>
 
   <div class="container">
+
     <section>
-      <h2>👨‍💻 Sobre mí</h2>
+      <h2>👨‍💻 About Me</h2>
       <p>
-        Soy un Automation & BackEnd Engineer enfocado en escribir pruebas robustas, eficientes y mantenibles utilizando ecosistema Python. Me apasiona la calidad del software, la automatización, la arquitectura de pruebas, y las buenas prácticas.
+        I am a Python Engineer & Automation Developer focused on building scalable backend solutions,
+        robust automation systems, and clean, maintainable code. My work blends backend engineering,
+        process automation, testing workflows, and modern Python tooling.
       </p>
     </section>
 
     <section>
-      <h2>🛠️ Tecnologías y Herramientas</h2>
+      <h2>🛠️ Tech Stack</h2>
       <ul>
-        <li>Python (Async, typing, OOP avanzado)</li>
+        <li>Python (Async, OOP, typing)</li>
         <li>Selenium + Page Object Model + Page Factory</li>
-        <li>PyTest (fixtures, parametrización, paralelización)</li>
-        <li>Django (APIs, ORM, testing integrado)</li>
-        <li>Pandas (data validation, ETL básico para QA)</li>
-        <li>Git / GitHub / GitHub Actions</li>
-        <li>Docker (entornos aislados para pruebas)</li>
-        <li>CI/CD básico para pipelines de pruebas</li>
+        <li>PyTest (fixtures, parametrization, parallelization)</li>
+        <li>Django (APIs, ORM)</li>
+        <li>Pandas (validation, automation)</li>
+        <li>Git / GitHub</li>
       </ul>
     </section>
 
-    <section>
-      <h2>🚀 Proyectos Destacados</h2>
-      <ul>
-        <li><strong>Framework de automatización en Python + PyTest + Selenium</strong><br>Arquitectura modular, reporting y fixtures profesionales.</li>
-        <li><strong>API Testing con Django + PyTest</strong><br>Validación de endpoints, seguridad, respuestas y rendimiento.</li>
-        <li><strong>Data QA con Pandas</strong><br>Limpieza, validación y verificación automatizada de datasets.</li>
-      </ul>
-    </section>
+   <section>
+<h2>🚀 Featured Real Projects</h2>
+<ul>
+<li><strong><a href="https://github.com/devmakerstudio/Automatizacion-de-Consulta-Estado" target="_blank">Automated Public Data Status Checker</a></strong><br>
+End-to-end Python + Selenium automation framework designed to perform high-volume ID status retrieval, structured data extraction, field-level validation, and persistent storage of public record metadata.
+</li>
 
-    <section>
-      <h2>📫 Contacto</h2>
-      <p>Email: <a href="mailto:devmakerstudio@gmail.com">devmakerstudio@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/devmakerstudio">https://github.com/devmakerstudio</a></p>
-      <p>LinkedIn: <a href="#">Tu LinkedIn Aquí</a></p>
-    </section>
-  </div>
 
-  <footer>
-    © 2025 Sócrates Palacios — Portafolio QA Automation
-  </footer>
+<li><strong><a href="https://github.com/devmakerstudio/Payment_List_App" target="_blank">Payment List Processing App</a></strong><br>
+Modular Django backend application enabling structured dataset ingestion, normalization, and management of financial records (expenses, income, operational outcomes), supported by automated data workflows and model-level validation.
+</li>
+
+
+<li><strong><a href="https://github.com/devmakerstudio/DjangoRestFramework_API_Personas" target="_blank">Django REST API — Personas</a></strong><br>
+Fully structured Django REST Framework API implementing CRUD operations, serializer-based validation layers, integrity constraints, and automated consistency enforcement across the data lifecycle.
+</li>PI
+</ul>
+</section>
+
+
+<section>
+<h2>📫 Contact</h2>
+<p>Email: <a href="mailto:devmakerstudio@gmail.com">devmakerstudio@gmail.com</a></p>
+<p>GitHub: <a href="https://github.com/devmakerstudio">github.com/devmakerstudio</a></p>
+</section>
+
+
+</div>
+
+
+<footer>
+© 2025 DevMaker Studio — Python Engineering & Automation Portfolio
+</footer>
+
+
 </body>
 </html>
